@@ -1,0 +1,282 @@
+/* =========================================
+   1. UNIVERSAL RESET (Syarat Modul)
+   ========================================= */
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. TYPOGRAPHY & BODY STYLE
+   ========================================= */
+body {
+    /* Tipografi modern */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* 60% Warna Dominan Netral (Abu-abu sangat lembut) */
+    background-color: #f8fafc;
+    /* 30% Warna Teks Utama (Biru gelap/abu-abu gelap) */
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. HEADER & NAVIGASI (Flexbox)
+   ========================================= */
+header {
+    /* 10% Warna Aksen (Biru Elektrik) */
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid #1d4ed8;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    /* Menggunakan Flexbox untuk menu */
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap; /* Agar rapi di layar kecil */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   4. LAYOUT UTAMA & SECTIONS
+   ========================================= */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    /* Sudut membulat */
+    border-radius: 12px;
+    /* Bayangan halus */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+h2 {
+    color: #0f172a;
+    font-size: 22px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. ASIDE & LIST (Syarat Modul)
+   ========================================= */
+article p {
+    margin-bottom: 20px;
+}
+
+aside {
+    background-color: #f1f5f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+aside h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+ol li {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+/* =========================================
+   6. TABEL DATA SEMANTIK (Syarat Modul)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+caption {
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: #64748b;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+thead th {
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+tbody th {
+    font-weight: 600;
+    color: #334155;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+tfoot td {
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
+    background-color: #f8fafc;
+}
+
+/* =========================================
+   7. FORMULIR INTERAKTIF (Syarat Modul)
+   ========================================= */
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: 700;
+    color: #2563eb;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Styling Khusus Checkbox */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+label[for="setuju"] {
+    display: inline;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Tombol Submit */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+button[type="submit"]:active {
+    transform: translateY(2px);
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 14px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* =========================================
+   9. MEDIA QUERIES (Responsif untuk Layar Kecil)
+   ========================================= */
+@media (max-width: 768px) {
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    /* Membuat tabel bisa di-scroll ke samping di HP */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
