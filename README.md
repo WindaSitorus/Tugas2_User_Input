@@ -15,13 +15,4 @@ Proyek ini dibangun dengan mematuhi standar pengembangan web modern, meliputi:
 3. **Formulir Interaktif & Aksesibel:** Formulir pemesanan layanan yang dikelompokkan dengan `<fieldset>`, memiliki lebih dari 6 tipe input yang berbeda, serta dilengkapi atribut label eksplisit dan validasi *native* HTML5.
 4. **Desain CSS Modern & Responsif:** Menerapkan *Universal Box Sizing Reset*, hirarki tipografi, palet warna beraturan (60-30-10), *border-radius*, *box-shadow*, dan tata letak berbasis CSS Flexbox yang responsif di berbagai perangkat.
 
-## 📸 Tangkapan Layar (Screenshot)
-*(Ganti URL gambar di bawah ini dengan screenshot website portofolio milikmu)*
-git
 
-## 🌐 Live Demo
-Website ini telah di-deploy menggunakan GitHub Pages dan dapat diakses secara langsung melalui tautan berikut:
-**[Link GitHub Pages Kamu Di Sini]**
-
----
-*Dibuat untuk keperluan Praktikum Web - 2026*
