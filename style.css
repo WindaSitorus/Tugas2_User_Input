@@ -1,282 +1,139 @@
-/* =========================================
-   1. UNIVERSAL RESET (Syarat Modul)
-   ========================================= */
-*, *::before, *::after { 
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
+/* 
+   Tugas Modul 3: CSS Custom Overrides & Theming
+   Menggunakan CSS Variables, Advanced Selectors, tanpa !important.
+*/
+
+:root {
+    /* Palet warna modern (Indigo & Biru Tua) untuk tampilan elegan */
+    --primary-brand: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-brand: #0ea5e9;
+    --surface-bg: #ffffff;
+    --body-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --card-radius: 16px;
+    --shadow-lift: 0 15px 30px -5px rgba(79, 70, 229, 0.15);
 }
 
-/* =========================================
-   2. TYPOGRAPHY & BODY STYLE
-   ========================================= */
 body {
-    /* Tipografi modern */
+    background-color: var(--body-bg);
+    color: var(--text-main);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    /* 60% Warna Dominan Netral (Abu-abu sangat lembut) */
-    background-color: #f8fafc;
-    /* 30% Warna Teks Utama (Biru gelap/abu-abu gelap) */
-    color: #1e293b;
-    line-height: 1.6;
 }
 
 /* =========================================
-   3. HEADER & NAVIGASI (Flexbox)
+   Custom Hero Section dengan Gradasi
    ========================================= */
-header {
-    /* 10% Warna Aksen (Biru Elektrik) */
-    background-color: #2563eb;
-    color: #ffffff;
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 4px solid #1d4ed8;
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-brand) 0%, var(--secondary-brand) 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
+/* =========================================
+   Custom Efek Teks
+   ========================================= */
+.text-gradient {
+    background: linear-gradient(to right, var(--primary-brand), var(--secondary-brand));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
-nav ul {
-    /* Menggunakan Flexbox untuk menu */
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    list-style: none;
-    flex-wrap: wrap; /* Agar rapi di layar kecil */
+/* =========================================
+   Custom Overrides: Kartu Portofolio 
+   ========================================= */
+.project-card {
+    background-color: var(--surface-bg);
+    border-radius: var(--card-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+}
+
+/* =========================================
+   Lab 1 Modul 3: Specificity & Pseudo-Elements
+   ========================================= */
+.metric-card {
+    position: relative;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-brand), var(--secondary-brand));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.metric-card:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.metric-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Animasi untuk Badge Kontak di Hero Section */
+.hover-badge {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hover-badge:hover {
+    transform: scale(1.05);
+    background-color: var(--surface-bg);
+}
+
+/* =========================================
+   Advanced Selectors: Interaksi Formulir
+   ========================================= */
+.form-control-custom:focus,
+.form-select:focus {
+    border-color: var(--primary-brand);
+    /* Mengandalkan kekhususan kelas, tanpa !important */
+    box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.15); 
+}
+
+/* Memanfaatkan Pseudo-class :focus-within */
+.form-floating:focus-within label {
+    color: var(--primary-brand);
     font-weight: 600;
-    font-size: 15px;
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-}
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* =========================================
-   4. LAYOUT UTAMA & SECTIONS
+   Custom Tombol Global
    ========================================= */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-section {
-    background-color: #ffffff;
-    padding: 30px;
-    margin-bottom: 30px;
-    /* Sudut membulat */
-    border-radius: 12px;
-    /* Bayangan halus */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border: 1px solid #e2e8f0;
-}
-
-h2 {
-    color: #0f172a;
-    font-size: 22px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-/* =========================================
-   5. ASIDE & LIST (Syarat Modul)
-   ========================================= */
-article p {
-    margin-bottom: 20px;
-}
-
-aside {
-    background-color: #f1f5f9;
-    padding: 20px;
+.custom-btn {
     border-radius: 8px;
-    border-left: 4px solid #2563eb;
+    transition: all 0.2s ease;
 }
 
-aside h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #0f172a;
+.custom-btn.btn-primary {
+    background-color: var(--primary-brand);
+    border-color: var(--primary-brand);
 }
 
-ol {
-    margin-left: 20px;
+.custom-btn.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
-ol li {
-    margin-bottom: 8px;
-    color: #334155;
-}
-
-/* =========================================
-   6. TABEL DATA SEMANTIK (Syarat Modul)
-   ========================================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background-color: #ffffff;
-}
-
-caption {
-    font-weight: 600;
-    padding-bottom: 10px;
-    color: #64748b;
-    text-align: left;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-thead th {
-    background-color: #f8fafc;
-    font-weight: 700;
-    color: #0f172a;
-    border-bottom: 2px solid #cbd5e1;
-}
-
-tbody th {
-    font-weight: 600;
-    color: #334155;
-}
-
-tbody tr:hover {
-    background-color: #f1f5f9;
-}
-
-tfoot td {
-    font-size: 13px;
-    color: #64748b;
-    text-align: center;
-    background-color: #f8fafc;
-}
-
-/* =========================================
-   7. FORMULIR INTERAKTIF (Syarat Modul)
-   ========================================= */
-fieldset {
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-legend {
-    font-weight: 700;
-    color: #2563eb;
-    padding: 0 10px;
-}
-
-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    margin-top: 15px;
-    color: #334155;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 14px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Styling Khusus Checkbox */
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-label[for="setuju"] {
-    display: inline;
-    font-weight: normal;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* Tombol Submit */
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    background-color: #2563eb;
-    color: #ffffff;
-    border: none;
-    padding: 12px;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-button[type="submit"]:hover {
-    background-color: #1d4ed8;
-}
-
-button[type="submit"]:active {
-    transform: translateY(2px);
-}
-
-/* =========================================
-   8. FOOTER
-   ========================================= */
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #64748b;
-    font-size: 14px;
-    border-top: 1px solid #e2e8f0;
-}
-
-/* =========================================
-   9. MEDIA QUERIES (Responsif untuk Layar Kecil)
-   ========================================= */
-@media (max-width: 768px) {
-    main {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    
-    section {
-        padding: 20px;
-    }
-    
-    /* Membuat tabel bisa di-scroll ke samping di HP */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
+.custom-btn:active {
+    transform: scale(0.98) !important; /* Satu-satunya !important untuk utilitas darurat klik sesuai modul */
 }
