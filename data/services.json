@@ -1,0 +1,22 @@
+[
+  {
+    "id": "uiux",
+    "name": "Desain UI/UX (Figma)",
+    "description": "Pembuatan wireframe, mockup, dan prototipe interaktif untuk aplikasi web atau mobile."
+  },
+  {
+    "id": "db",
+    "name": "Desain Basis Data & T-SQL",
+    "description": "Perancangan skema database relasional, dan penulisan skrip query kompleks."
+  },
+  {
+    "id": "java",
+    "name": "Pemrograman Java",
+    "description": "Bantuan pengerjaan logika pemrograman berorientasi objek berbasis Java."
+  },
+  {
+    "id": "mc",
+    "name": "Kebutuhan MC / Public Speaking",
+    "description": "Jasa pembawa acara profesional untuk kegiatan seminar atau acara kampus."
+  }
+]

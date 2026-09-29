@@ -1,139 +1,42 @@
-/* 
-   Tugas Modul 3: CSS Custom Overrides & Theming
-   Menggunakan CSS Variables, Advanced Selectors, tanpa !important.
-*/
-
+/* Tema Soft Blue */
 :root {
-    /* Palet warna modern (Indigo & Biru Tua) untuk tampilan elegan */
-    --primary-brand: #4f46e5;
-    --primary-hover: #4338ca;
-    --secondary-brand: #0ea5e9;
+    --primary-brand: #7ba4cf;  
+    --primary-hover: #5d8ab9;  
+    --accent-color: #fca311;   
+    --accent-hover: #e08e0b;
     --surface-bg: #ffffff;
-    --body-bg: #f8fafc;
-    --border-color: #e2e8f0;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --card-radius: 16px;
-    --shadow-lift: 0 15px 30px -5px rgba(79, 70, 229, 0.15);
+    --text-dark: #1e3a5f;      
+    --card-radius: 12px;
+    --shadow-lift: 0 10px 20px 3px rgba(123, 164, 207, 0.2);
 }
 
-body {
-    background-color: var(--body-bg);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+body.custom-bg {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    background-color: #f0f6ff; 
 }
 
-/* =========================================
-   Custom Hero Section dengan Gradasi
-   ========================================= */
-.hero-section {
-    background: linear-gradient(135deg, var(--primary-brand) 0%, var(--secondary-brand) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-/* =========================================
-   Custom Efek Teks
-   ========================================= */
-.text-gradient {
-    background: linear-gradient(to right, var(--primary-brand), var(--secondary-brand));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-
-/* =========================================
-   Custom Overrides: Kartu Portofolio 
-   ========================================= */
 .project-card {
     background-color: var(--surface-bg);
     border-radius: var(--card-radius);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lift);
 }
 
-/* =========================================
-   Lab 1 Modul 3: Specificity & Pseudo-Elements
-   ========================================= */
-.metric-card {
-    position: relative;
-    background: var(--surface-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.custom-btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
-.metric-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(to right, var(--primary-brand), var(--secondary-brand));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.metric-card:hover {
-    box-shadow: var(--shadow-lift);
-}
-
-.metric-card:hover::before {
-    transform: scaleX(1);
-}
-
-/* Animasi untuk Badge Kontak di Hero Section */
-.hover-badge {
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.hover-badge:hover {
-    transform: scale(1.05);
-    background-color: var(--surface-bg);
-}
-
-/* =========================================
-   Advanced Selectors: Interaksi Formulir
-   ========================================= */
-.form-control-custom:focus,
-.form-select:focus {
-    border-color: var(--primary-brand);
-    /* Mengandalkan kekhususan kelas, tanpa !important */
-    box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.15); 
-}
-
-/* Memanfaatkan Pseudo-class :focus-within */
-.form-floating:focus-within label {
-    color: var(--primary-brand);
-    font-weight: 600;
-}
-
-/* =========================================
-   Custom Tombol Global
-   ========================================= */
-.custom-btn {
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.custom-btn.btn-primary {
-    background-color: var(--primary-brand);
-    border-color: var(--primary-brand);
-}
-
-.custom-btn.btn-primary:hover {
-    background-color: var(--primary-hover);
-    border-color: var(--primary-hover);
+.custom-btn-accent:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-}
-
-.custom-btn:active {
-    transform: scale(0.98) !important; /* Satu-satunya !important untuk utilitas darurat klik sesuai modul */
 }

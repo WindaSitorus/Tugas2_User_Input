@@ -1,0 +1,15 @@
+{
+  "name": "Winda N.V. Sitorus",
+  "role": "Mahasiswa Sistem Informasi",
+  "university": "Institut Teknologi Del",
+  "email": "windasitorus0197@gmail.com",
+  "phone": "081260469774",
+  "bio": "Saya aktif mengeksplorasi pengembangan sistem informasi, mulai dari pemodelan proses bisnis, desain antarmuka, hingga perancangan basis data relasional. Selain hal teknis, saya juga menikmati aktivitas public speaking seperti menjadi Master of Ceremony (MC).",
+  "skills": [
+    "Desain UI/UX (Figma)",
+    "T-SQL & Basis Data",
+    "Pemrograman Java",
+    "Public Speaking & MC"
+  ],
+  "photo": "images/images.jpeg"
+}

@@ -1,36 +1,39 @@
-# Portofolio Pribadi & Portal Layanan Konsultasi - Winda N.V. Sitorus
+# 🚀 Personal Portfolio & Service Portal (Week 4)
 
-Proyek ini adalah pemenuhan Tugas Mandiri Praktikum Pemrograman Web (Modul 3) - Institut Teknologi Del. Website ini merupakan **Personal Portfolio & Service Portal** yang dirancang secara modern, responsif, dan interaktif menggunakan *framework* Bootstrap 5.3 dan arsitektur CSS tingkat lanjut.
+**Nama:** Winda N.V. Sitorus  
+**NIM:** 12S24019  
+**Mata Kuliah:** Pemrograman dan Pengujian Web  
+**Program Studi:** S1 Sistem Informasi - Institut Teknologi Del  
 
-## 📖 Tentang Website Ini
-Website ini berfungsi sebagai identitas digital profesional dan galeri karya akademik milik Winda N.V. Sitorus, mahasiswa Sistem Informasi. Melalui website ini, pengunjung dapat:
-*   **Mengenal Profil Pengembang:** Membaca latar belakang, minat eksplorasi, dan fokus keahlian utama (UI/UX, Basis Data T-SQL, Pemrograman Java, dan aktivitas *Public Speaking* / MC).
-*   **Melihat Portofolio:** Menjelajahi riwayat proyek akademik dan praktikum (seperti Konsep Aplikasi Kesehatan, Trigger & Audit Logging, hingga Platform Kantin) yang disajikan dalam bentuk *Grid Card* responsif dengan detail informasi yang muncul melalui *Pop-up Modal*.
-*   **Mengajukan Kolaborasi:** Menggunakan formulir layanan interaktif untuk menghubungi dan menawarkan kolaborasi proyek, bantuan desain, atau kebutuhan MC secara langsung.
+---
 
-## 👤 Informasi Pengembang
-* **Nama:** Winda N.V. Sitorus
-* **NIM:** 12S24019
-* **Program Studi:** S1 Sistem Informasi
-* **Mata Kuliah:** Pemrograman dan Pengujian Web (12S3101)
+## 📝 Deskripsi Proyek Keseluruhan
 
-## 🌐 Live Demo
-[🔗 Klik di sini untuk melihat Live Demo Web Portofolio (GitHub Pages)](#) 
-*(Catatan: Ganti tanda # dengan tautan GitHub Pages milikmu yang aktif)*
+Proyek ini dikembangkan sebagai bagian dari penugasan mata kuliah Pemrograman dan Pengujian Web. Website ini dirancang sebagai media portofolio personal dan portal layanan interaktif yang menampilkan identitas akademik, galeri proyek keahlian dengan tema warna *Soft Blue* yang elegan, serta formulir pemesanan layanan konsultasi profesional. Dalam perancangannya, proyek ini berfokus pada penerapan standar rekayasa perangkat lunak web kontemporer yang estetik, responsif, aksesibel, dan memiliki performa tinggi.
 
-## 🚀 Spesifikasi Teknis & Pembaruan (Refactoring Modul 3)
-Website ini telah direfaktor dari versi HTML murni (Tugas 2) menjadi standar web modern dengan spesifikasi berikut:
-1. **Responsive Navbar & Hero:** Implementasi navigasi `sticky-top` dengan tombol *hamburger toggle* yang berfungsi sempurna di perangkat seluler tanpa *error console*, serta *hero section* yang proporsional.
-2. **Sistem Grid 12-Kolom & Modal Dialog:** Data riwayat proyek diubah dari bentuk tabel menjadi kumpulan Kartu Proyek (`.card`) yang responsif. Dilengkapi dengan interaktivitas Bootstrap Modal untuk menampilkan detail riwayat proyek.
-3. **Modernisasi Formulir:** Pembaruan antarmuka formulir konsultasi menggunakan *Floating Labels* (`.form-floating`), *Input Groups* berikon, dan integrasi umpan balik validasi visual otomatis (`.valid-feedback` & `.invalid-feedback`).
-4. **Custom CSS Overrides & Variabel Global:** Pendefinisian variabel CSS khusus pada `:root` untuk standarisasi tema warna, penerapan *advanced pseudo-classes*, serta mikro-interaksi kustom tanpa menggunakan deklarasi `!important`.
+### Evolusi Arsitektur & Implementasi Teknis
+Pembangunan aplikasi ini melalui tiga fase transformasi arsitektur utama:
+1. **Pondasi Semantik & Styling Mandiri (Minggu 2):** 
+   Halaman web diinisialisasi menggunakan struktur tag semantik HTML5 standar (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) untuk menjamin aksesibilitas dan kemudahan navigasi. Tampilan visual dibangun menggunakan CSS murni dengan pendekatan *Box Model*, aturan harmonisasi warna *60-30-10*, tipografi modern, serta tata letak berbasis *Flexbox* dan *Grid*[cite: 1].
+2. **Modernisasi Kerangka Kerja Bootstrap 5 (Minggu 3):** 
+   Proyek mengalami *refactoring* visual dengan mengintegrasikan kerangka kerja *Bootstrap 5.3* dan *Bootstrap Icons* via CDN. Desain antarmuka ditingkatkan menggunakan sistem grid responsif 12-kolom, komponen *Responsive Navbar* dengan tombol *hamburger toggle*, *Cards*, serta *Floating Labels* pada formulir interaktif[cite: 2]. Kustomisasi gaya diperhalus melalui arsitektur variabel CSS (`:root`) tanpa mengandalkan deklarasi `!important`[cite: 2].
+3. **Arsitektur Decoupled Multi-Tier & Dynamic CSR (Minggu 4):** 
+   Transformasi mutakhir diterapkan dengan memisahkan lapisan presentasi dan lapisan data (*Separation of Concerns*). Seluruh data statis diekstrak ke dalam direktori `/data` dalam format file JSON mandiri (`profile.json`, `projects.json`, `services.json`)[cite: 7]. Halaman web kini menerapkan model *Dynamic Client-Side Rendering* (CSR), di mana browser menggunakan JavaScript modern (`fetch()` dan `async/await`) untuk memuat dan merender konten secara asinkron[cite: 7]. Selain itu, diterapkan pula komponen *Universal Dynamic Modal* untuk detail proyek, serta pengiriman formulir asinkron dengan penyimpanan data lokal menggunakan `localStorage`[cite: 7].
 
-## 📊 Komparasi: Sebelum vs Sesudah Integrasi Framework
+---
 
-| Area Evaluasi | Minggu 2 (Sebelum) | Minggu 3 (Sesudah Integrasi Bootstrap 5) |
-| :--- | :--- | :--- |
-| **Tata Letak & Grid** | Menggunakan CSS Flexbox manual dan penyajian proyek dengan Tabel HTML statis. | Menggunakan sistem Grid 12-kolom responsif (`row-cols-md-2`, dll) dan komponen Cards. |
-| **Navigasi Utama** | Menu tautan horizontal biasa yang terpotong di layar ponsel. | Komponen Navbar modern dengan *collapsible hamburger menu* (`data-bs-toggle="collapse"`). |
-| **Komponen Formulir** | Tipe *input* bawaan *browser* biasa dengan tag `<fieldset>`. | Desain profesional dengan *Floating Labels*, *Input Group*, dan validasi warna otomatis (hijau/merah). |
-| **Gaya Visual (CSS)** | Aturan CSS manual (reset bawaan) dan nilai warna ditulis berulang (*hardcode*). | Implementasi CSS Variables di `:root` untuk tema terpusat dan penimpaan gaya Bootstrap secara elegan. |
-| **Interaktivitas** | Hanya mengandalkan efek *hover* sederhana pada teks/tautan. | Dilengkapi interaksi tingkat lanjut seperti *Modal pop-up* dan animasi dari *pseudo-element* `::before`. |
+## 🏗️ Diagram Arsitektur C4 Container Model
+
+Diagram berikut memetakan pemisahan tugas (*Separation of Concerns*) antara lapisan presentasi, logika asinkron, dan lapisan data terstruktur:
+
+```mermaid
+graph TD
+    Client[Browser Pengguna / Frontend] -->|Memuat HTML Shell| CDN[Static Server / GitHub Pages]
+    Client -->|Fetch API / Async| DataLayer[JSON Data Providers]
+    Client -->|HTTP POST| FormAPI[Mock REST API]
+    
+    subgraph Layer Penyimpanan Data (Data Storage Tier)
+        DataLayer --> P[projects.json]
+        DataLayer --> S[services.json]
+        DataLayer --> U[profile.json]
+    end
