@@ -1,0 +1,38 @@
+[
+  {
+    "id": "p1",
+    "title": "Konsep Aplikasi Kesehatan",
+    "category": "Desain UI/UX",
+    "badgeClass": "text-primary bg-primary-subtle",
+    "shortDescription": "Merancang UI/UX di Figma berdasarkan statistik imunisasi nasional dan rekomendasi IDAI.",
+    "fullDescription": "Proyek ini fokus pada perancangan antarmuka pengguna (UI/UX) untuk aplikasi kesehatan mobile. Proses desain dilakukan di Figma, menganalisis data statistik imunisasi nasional serta merujuk pada jadwal rekomendasi resmi dari Ikatan Dokter Anak Indonesia (IDAI).",
+    "tags": ["Figma", "UX Research", "April 2026"]
+  },
+  {
+    "id": "p2",
+    "title": "Trigger & Audit Logging",
+    "category": "Basis Data",
+    "badgeClass": "text-success bg-success-subtle",
+    "shortDescription": "Merancang T-SQL trigger dan mekanisme audit logging menggunakan SQL Server Management Studio.",
+    "fullDescription": "Bagian dari tugas Praktikum Basis Data Lanjut. Pembuatan skrip T-SQL trigger untuk memantau aktivitas manipulasi data (DML), serta merancang tabel khusus pencatat jejak audit (audit log) pada database SQL Server.",
+    "tags": ["SQL Server", "T-SQL", "Sep 2026"]
+  },
+  {
+    "id": "p3",
+    "title": "Platform Kantin Kampus",
+    "category": "Manajemen Bisnis",
+    "badgeClass": "text-info-emphasis bg-info-subtle",
+    "shortDescription": "Mendefinisikan proses bisnis menyeluruh untuk manajemen menu dan pemrosesan pembayaran.",
+    "fullDescription": "Proyek ini bertujuan memodelkan proses bisnis operasional kantin kampus, mulai dari pencatatan menu, pelacakan penjualan harian, hingga pemrosesan pembayaran digital bagi mahasiswa.",
+    "tags": ["BPMN", "Business Analysis", "April 2026"]
+  },
+  {
+    "id": "p4",
+    "title": "Eksplorasi Java OOP",
+    "category": "Pemrograman",
+    "badgeClass": "text-warning-emphasis bg-warning-subtle",
+    "shortDescription": "Implementasi program Java, eksekusi terminal, dan pemodelan driver.",
+    "fullDescription": "Praktikum pemrograman berorientasi objek yang melibatkan pembuatan struktur kelas, pewarisan, dan proses kompilasi serta debugging langsung melalui terminal.",
+    "tags": ["Java", "OOP", "Awal 2026"]
+  }
+]
